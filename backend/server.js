@@ -1,12 +1,16 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import { recipeRouter } from './router/recipe.router.js';
-
+import dbConfig from './db/config.js';
 
 dotenv.config()
+
 const PORT = process.env.PORT || 5000
 
 const app = express();
+
+dbConfig();
+
 
 app.get('/', (req, res) => {
     res.json({ message: 'hello' })
