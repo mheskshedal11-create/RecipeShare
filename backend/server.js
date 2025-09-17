@@ -1,21 +1,24 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import { recipeRouter } from './router/recipe.router.js';
+import express from 'express';
+import dotenv from 'dotenv';
+import recipeRouter from './router/recipe.router.js';
 import dbConfig from './db/config.js';
 
-dotenv.config()
-
-const PORT = process.env.PORT || 5000
+dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 dbConfig();
 
+app.use(express.json());
+
 
 app.get('/', (req, res) => {
-    res.json({ message: 'hello' })
-})
-app.use('/api/v1/recipe', recipeRouter)
+    res.send('RecipeShare API is running');
+});
+
+app.use('/api/recipes', recipeRouter);
+
 app.listen(PORT, () => {
-    console.log(` server is running http://localhost:${PORT}`)
-})
+    console.log(`Server is running at http://localhost:${PORT}`);
+});
