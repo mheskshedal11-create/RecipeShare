@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import recipeRouter from './router/recipe.router.js';
 import dbConfig from './db/config.js';
 import cors from 'cors'
+import userRouter from './router/user.router.js';
 dotenv.config();
 
 const app = express();
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/recipes', recipeRouter);
+app.use('/api/user', userRouter)
 
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
