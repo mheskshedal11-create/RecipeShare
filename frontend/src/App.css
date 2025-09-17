@@ -1,0 +1,147 @@
+/* Reset & Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+/* ==================== Navbar ==================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 7rem;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b6cc1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links li a {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links li a:hover {
+  color: #5d5858;
+  transform: translateY(-2px);
+}
+
+.active-link {
+  color: #c8ec75;
+  font-weight: bold;
+}
+
+.inactive-link {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* =================Home section ======================  */
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  width: 90%;
+  margin: 8rem auto 0 auto;
+  position: relative;
+  min-height: 80vh;
+}
+
+/* Left Section */
+.home .left {
+  flex: 1;
+}
+
+.home .left h1 {
+  font-size: 2.8rem;
+  color: #222;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.home .left h1 span {
+  color: #007bff;
+}
+
+.home .left p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Button */
+.primary-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.primary-btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Right Section */
+.home .right img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Wave */
+.home .bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .home .left h1 {
+    font-size: 2rem;
+  }
+}
